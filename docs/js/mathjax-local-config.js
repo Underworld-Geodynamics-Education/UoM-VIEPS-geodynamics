@@ -1,7 +1,5 @@
 /* Set local configuration for mathjax */
 
-/* Set local configuration for mathjax */
-
 MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],

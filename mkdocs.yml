@@ -2,17 +2,10 @@ site_name: Literate Programming & Docker
 site_author: Louis Moresi
 site_dir: www
 
-# theme over-ride
-
-theme_dir: jupyter-server-theme
-
-# Layout of pages
-
-use_directory_urls: False
-include_next_prev: False
-
-# Theme
-theme: flatly
+## Add the pages you want built here
+#
+#  The hierarchy of the list describes how these pages will be represented in the navigation
+#  bar at the top of the page. Either as individual links or as a dropdown menu of links
 
 pages:
 - index.md
@@ -21,22 +14,15 @@ pages:
     - 'How to write a new page' : WritingContent.md
     - 'Installation instructions' : Instructions.md
 
-# Mathematics
-
-extra_javascript:
-  - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-  - js/mathjax-local-config.js
-
-
-## Here is how to add extra (external) links to the navigation bar
-##
-## 1) Add a link to the nav bar
-##     The item you add is a two-member list: ["Name for the link", "url"]
-## 2) Add a new menu item to the nav bar
-##     The item you add is a three-or-more-member list with a name for the menu item as the first member
-##     and subsequent entries being lists of names / urls as above:
-##     [ "Menu name", ["Menu item 1 name", "Menu item 1 url"], ["Menu item 2 name", "Menu item 2 url"], ... ]
-##
+## Here is how to add extra (usually external) links to the navigation bar
+#
+# 1) Add a link to the nav bar
+#     The item you add is a two-member list: ["Name for the link", "url"]
+# 2) Add a new menu item to the nav bar
+#     The item you add is a three-or-more-member list with a name for the menu item as the first member
+#     and subsequent entries being lists of names / urls as above:
+#     [ "Menu name", ["Menu item 1 name", "Menu item 1 url"], ["Menu item 2 name", "Menu item 2 url"], ... ]
+#
 
 
 extra:
@@ -49,3 +35,25 @@ extra:
             ["Local", "/notebooks/docs"],
             ["Github", "https://github.com/lmoresi/notebook-web-template"]
           ]
+
+
+
+## No need to change these config options unless you want to change the theme or the
+#  layout of the navigation bar.
+#
+#  Some of these options are not intuitive so take care !
+
+# theme over-ride
+
+theme_dir: jupyter-server-theme
+theme: flatly
+
+# Layout of pages
+
+use_directory_urls: False
+
+# Mathematics
+
+extra_javascript:
+  - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  - js/mathjax-local-config.js
