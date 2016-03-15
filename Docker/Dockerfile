@@ -1,4 +1,4 @@
-FROM lmoresi/unimelb-debian-base:v1.03
+FROM lmoresi/unimelb-debian-base:v1.04
 
 ## =============================================================
 ## base - image ... whatever functionality you want to provide !
@@ -56,4 +56,4 @@ WORKDIR /demonstration
 EXPOSE 8080
 ENTRYPOINT ["/usr/local/bin/tini", "--"]
 
-CMD scripts/run-jupyter
+CMD scripts/run-jupyter -p 8080

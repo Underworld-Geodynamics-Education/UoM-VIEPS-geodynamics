@@ -28,6 +28,6 @@ _Not everything interesting is found in the menu bar !_
 
 ## External
 
-   * [Github Source](https://github.com/lmoresi/docker-website-notebooks)
+   * [Github Source](https://github.com/lmoresi/notebook-web-template)
    * [Louis Moresi's Home Page](http://www.moresi.info)
    * [Louis Moresi's email](mailto:Louis.Moresi@unimelb.edu.au)
