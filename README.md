@@ -1,6 +1,8 @@
 
 # VIEPS Geodynamics course
 
-Course notes and live examples
+Louis Moresi
+email: [louis.moresi@unimelb.edu.au](mailto:louis.moresi@unimelb.edu.au)
+www: [www.moresi.info](http://www.moresi.info)
 
-Optimised for a Docker environment.
+Course materials for University of Melbourne / VIEPS geodynamics class 2016 -
