@@ -1,15 +1,5 @@
----
-layout: page
-title: "Computational Geodynamics: Introduction to Numerical Methods"
-date: 2015-09-17
-modified: 2015-09-17
-image:
-  feature: pages/MundusSubterraneusBanner.jpg
-  credit: "Athanasius Kircher, Mundus subterraneus (1664/65)"
----
 
-
-
+## "Computational Geodynamics: Introduction to Numerical Methods"
 
 \\[
 \newcommand{\dGamma}{\mathbf{d}\boldsymbol{\Gamma}}
@@ -21,9 +11,6 @@ image:
 \newcommand{\Emerald }[1]{\textcolor[rgb]{0.0,0.7,0.3}{ #1}}
 \\]
 
-<!-- TOC / Menu -->
-{% include _numericsTOC.html %}
-<!-- *_ -->
 
 ## Introductory Remarks
 

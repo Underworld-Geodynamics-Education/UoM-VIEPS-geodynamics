@@ -8,11 +8,19 @@ site_dir: www
 #  bar at the top of the page. Either as individual links or as a dropdown menu of links
 
 pages:
-- index.md
-- Map.md
-- About:
-    - 'How to write a new page' : WritingContent.md
-    - 'Installation instructions' : Instructions.md
+- Home: index.md
+- Site Map: SiteMap.md
+- Course:
+    - "1 - Introduction":            Introduction.md
+    - "2 - Mantle Convection":       MantleConvection.md
+    - "3 - Dynamic Topography":      DynamicTopography.md
+    - "4 - Rheology & Localisation": Rheology.md
+    - "5 - Subduction zones":        Subduction.md
+    - "Assessment":                  Exercises.md
+- Notes:
+    - "Introduction To Geodynamics": ComputationalGeodynamics/TheoreticalBackground/index.md
+    - "Numerical Methods":           ComputationalGeodynamics/NumericalMethodsPrimer/index.md
+    - "Underworld User Guides":      Underworld/index.md
 
 ## Here is how to add extra (usually external) links to the navigation bar
 #
@@ -24,17 +32,21 @@ pages:
 #     [ "Menu name", ["Menu item 1 name", "Menu item 1 url"], ["Menu item 2 name", "Menu item 2 url"], ... ]
 #
 
-
 extra:
     nav_links:
         - ["Live Content",
             ["Notebooks", "/notebooks/Notebooks" ],
-            ["Terminal", "/terminals/1" ]
+            ["Terminal", "/terminals/1" ],
+            ["Console",  "/tree/Notebooks#running" ]
           ]
-        - [ "Source Code",
-            ["Local", "/notebooks/docs"],
-            ["Github", "https://github.com/lmoresi/notebook-web-template"]
+        - ["Assessment",
+            ["Assessment 1", "/notebooks/Notebooks/ForAssessment/Exercise1.ipynb"],
+            ["Assessment 2", "/notebooks/Notebooks/ForAssessment/Exercise2.ipynb"],
+            ["Assessment 3", "/notebooks/Notebooks/ForAssessment/Exercise3.ipynb"],
+            ["Assessment 4", "/notebooks/Notebooks/Numpy/GameOfLife.ipynb"],
+            ["Assessment 5", "/notebooks/Notebooks/Numpy/Seasonal_averages.ipynb"]
           ]
+
 
 
 
