@@ -1,4 +1,4 @@
-site_name: Literate Programming & Docker
+site_name: VIEPS Geodynamics
 site_author: Louis Moresi
 site_dir: www
 
@@ -11,16 +11,27 @@ pages:
 - Home: index.md
 - Site Map: SiteMap.md
 - Course:
-    - "1 - Introduction":            Introduction.md
-    - "2 - Mantle Convection":       MantleConvection.md
-    - "3 - Dynamic Topography":      DynamicTopography.md
-    - "4 - Rheology & Localisation": Rheology.md
-    - "5 - Subduction zones":        Subduction.md
-    - "Assessment":                  Exercises.md
+    - "1 - Introduction":            Introduction/index.md
+    - "2 - Mantle Convection":       MantleConvection/index.md
+    - "3 - Dynamic Topography":      DynamicTopography/index.md
+    - "4 - Rheology & Localisation": Rheology/index.md
+    - "5 - Subduction zones":        Subduction/index.md
+    - "Assessment":                  Assessment/index.md
 - Notes:
     - "Introduction To Geodynamics": ComputationalGeodynamics/TheoreticalBackground/index.md
     - "Numerical Methods":           ComputationalGeodynamics/NumericalMethodsPrimer/index.md
     - "Underworld User Guides":      Underworld/index.md
+- _JustBuildThese:  # not added to the navigation menu
+    - ComputationalGeodynamics/TheoreticalBackground/MathPhysicsBackground-1.md
+    - ComputationalGeodynamics/TheoreticalBackground/MathPhysicsBackground-2.md
+    - ComputationalGeodynamics/TheoreticalBackground/MathPhysicsBackground-3.md
+    - ComputationalGeodynamics/TheoreticalBackground/MathPhysicsBackground-4.md
+    - ComputationalGeodynamics/NumericalMethodsPrimer/NumericalMethodsPrimer-1.md
+    - ComputationalGeodynamics/NumericalMethodsPrimer/NumericalMethodsPrimer-2.md
+    - ComputationalGeodynamics/NumericalMethodsPrimer/NumericalMethodsPrimer-3.md
+    - ComputationalGeodynamics/NumericalMethodsPrimer/NumericalMethodsPrimer-4.md
+    - ComputationalGeodynamics/NumericalMethodsPrimer/NumericalMethodsPrimer-5.md
+    - ComputationalGeodynamics/NumericalMethodsPrimer/NumericalMethodsPrimer-6.md
 
 ## Here is how to add extra (usually external) links to the navigation bar
 #
