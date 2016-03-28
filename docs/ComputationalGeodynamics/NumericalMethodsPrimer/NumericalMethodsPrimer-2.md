@@ -1,12 +1,4 @@
----
-layout: page
-title: "Computational Geodynamics: Decay Equation"
-date: 2015-09-17
-modified: 2015-09-17
-image:
-  feature: pages/MundusSubterraneusBanner.jpg
-  credit: "Athanasius Kircher, Mundus subterraneus (1664/65)"
----
+
 
 \\[
 \newcommand{\dGamma}{\mathbf{d}\boldsymbol{\Gamma}}
@@ -18,9 +10,6 @@ image:
 \newcommand{\Emerald }[1]{\textcolor[rgb]{0.0,0.7,0.3}{ #1}}
 \\]
 
-<!-- TOC / Menu -->
-{% include _numericsTOC.html %}
-<!-- *_ -->
 
 We start with the numerical solution of a very simple differential equation. In fact we choose something simple enough that we already know the answer.
 
@@ -37,10 +26,13 @@ The solution to this equation is
 \\]
 where \\(\theta_0\\) is the amount of the radioactive material remaining. The same equation also describes the cooling of, say, a cup of coffee. In this case we interpret \\(\theta \\) as the excess temperature (above room temperature).
 
+---
 
-![Marching through time in small increments][time-discretisation]
+![](../Diagrams/theta_t1.png){. width="75%"}
 
-[time-discretisation]: ../Diagrams/theta_t1.png
+*Marching through time in small increments*
+
+---
 
 
 We want to march forward in time from our starting point where \\(\theta = \theta_0\\) to obtain the value of \\( \theta \\) at later times. To do this, we need to approximate the original differential equation, and, in particular, the value of the time derivative at each time. There are a number of ways to do this.
@@ -142,10 +134,13 @@ The results are more accurate when a smaller timestep is used although it requir
 
 ### Second Order Runge-Kutta
 
-![ different way to derive a second order method][rk2]
+---
 
-[rk2]: ../Diagrams/theta_rk2-1.png
+![](../Diagrams/theta_rk2-1.png){. width="75%"}
 
+*A different way to derive a second order method*
+
+---
 
 The Runge-Kutta approach to higher order integration methods is illustrated above. The idea is to estimate the gradient \\(d \theta / d t\\) at the half way point between two timestep values.  This is done in two stages. Initially a first order estimate, \\(\hat{\theta}\\) is made for the value of the function \\( \theta \\) at \\(t=t+\Delta t /2\\) in the future. This value is then subsituted into the differential equation to obtain the estimate for the gradient at this time. The revised gradient is then used to update the original \\(\theta(t)\\) by an entire timestep.
 
@@ -180,7 +175,7 @@ The Runge Kutta method can be extended by repeating the estimates on smaller reg
 The simplest way to answer our earlier question is to code the methods and see. The following is a script which computes the first and second order expressions and the Runge-Kutta method, and compares with the "exact" solution (which is numerical as well, of course, but computed through series expansions and the like).
 
 
-{% highlight python %}
+``` python
 # Compare various ways to integrate the
 # ODE for radioactive decay / Newton's law of cooling.
 # Assume decay constant of 1.0
@@ -269,8 +264,7 @@ Timestep 0975 97.5000    +2.4347e-45     -4.6575e+39     +5.3996e-43     +4.5320
 Timestep 1000 100.0000   +1.7479e-46     +5.6505e+40     +4.4522e-44     +3.7201e-44
 """
 
-{% endhighlight %}
-
+```
 Clearly, the quadratic expansion does not do a good job in this particular case, since the error is a growing instability which makes the solution useless almost immediately. However, the second order Runge-Kutta method is very accurate. This gives a clear warning that numerical solution of equations is partly an art (though the stability or otherwise of a given method can actually be proven formally in many cases).
 
 

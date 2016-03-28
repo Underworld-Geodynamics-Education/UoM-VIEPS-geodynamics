@@ -80,3 +80,7 @@ use_directory_urls: False
 extra_javascript:
   - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
   - js/mathjax-local-config.js
+
+markdown_extensions:
+    - attr_list
+    - def_list

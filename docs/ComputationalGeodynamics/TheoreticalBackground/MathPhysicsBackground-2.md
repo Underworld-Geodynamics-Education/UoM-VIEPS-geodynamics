@@ -1,16 +1,4 @@
----
-layout: page
-title: "Computational Geodynamics: Mathematical Models"
-date: 2015-09-17
-modified: 2015-09-17
-image:
-  feature: pages/MundusSubterraneusBanner.jpg
-  credit: "Athanasius Kircher, Mundus subterraneus (1664/65)"
----
-
-<!-- TOC / Menu -->
-{% include _mathphysicsTOC.html %}
-
+# Conservation Laws
 
 \\[
 \require{color}
@@ -22,18 +10,19 @@ image:
 \newcommand{\Emerald}[1]{\textcolor[rgb]{0.0,0.7,0.3}{ #1}}
 \\]
 
----
 
 Let us start by deriving the equations of motion, energy balance and so on through a conservation principle. This will give a useful insight into the different forms of the equations which we will later encounter.
 
 A general conservation law does not distinguish the quantity which is being conserved -- it is a mathematical identity. Consider a quantity \\( \phi \\) / unit mass which is carried around by a fluid. We can draw an arbitrary volume, \\( \Omega \\) to contain some amount of this fluid at a given time. We label the surface of the volume \\( \Omega \\) as \\( \Gamma \\), and define an outward surface normal vector \\( \dGamma \\) which is normal to the tangent plane of an infinitesimal element of the surface and has a magnitude equal to the area of this element.
 
-<figure>
-<img src="../Diagrams/vol_elt.png">
-<figcaption>
-Arbitrary fluid volume within which the fluid properties are to be conserved
-</figcaption>
-</figure>
+---
+
+![](../Diagrams/vol_elt.png){: width="50%"}
+
+_Arbitrary fluid volume within which the fluid properties are to be conserved_
+
+---
+
 
 We also define a source/sink term, \\(H\\) / unit mass which generates/consumes the quantity \\( \phi \\), and a flux term, \\(\mathbf{F}\\) which occurs across the surface when the fluid is stationary (e.g. this might represent diffusion of \\( \phi \\)). The rate of change of \\( \phi \\) is given by combining the contribution due to the source term, the stationary flux term, and the effect of motion of the fluid.
 
@@ -404,12 +393,15 @@ Before too long it would be a good idea to get a feeling for the flavour of thes
 
 First of all, however, it is a good idea to make some simplifications based on the kinds of problems we will want to attack. The first thing to do, as is often the case when developing a model, is to test whether any of the terms in the equations are negligibly small, or utterly dominant.  This is done by, essentially, dimensional analysis.
 
-Now we consider some `typical values' for the independent dimensions of the system (mass, length, time, temperature, that sort of thing) which can be used to rescale the standard units.  We rescale all lengths by the depth of the fluid, \\( d \\) (e.g. mantle thickness or depth of fluid in a lab tank),  time according to the characteristic time for diffusion of heat, and temperature by the temperature difference across the depth of the layer. Obviously these choices are dependent on the problem in question but this exercise is a common one in fluid dynamics and provides a useful first step in the assault on the problem
+Now we consider some 'typical values' for the independent dimensions of the system (mass, length, time, temperature, that sort of thing) which can be used to rescale the standard units.  We rescale all lengths by the depth of the fluid, \\( d \\) (e.g. mantle thickness or depth of fluid in a lab tank),  time according to the characteristic time for diffusion of heat, and temperature by the temperature difference across the depth of the layer. Obviously these choices are dependent on the problem in question but this exercise is a common one in fluid dynamics and provides a useful first step in the assault on the problem
 
-![Consider the fluid motions in a layer of arbitrary depth, \\(d\\). The fluid is assumed to have constant properties such as viscosity, thermal expansivity, thermal diffusivity. Small fluctuations in density due to temperature driven flow. Additional heat is carried (advected) by the flow from the hot boundary to the cool one whenever the fluid is moving.][rayleigh-benard-layer]
+---
 
-[rayleigh-benard-layer]: ./../Diagrams/layer.png
+![](../Diagrams/layer.png){: width="75%"}
 
+*Consider the fluid motions in a layer of arbitrary depth, \\(d\\). The fluid is assumed to have constant properties such as viscosity, thermal expansivity, thermal diffusivity. Small fluctuations in density due to temperature driven flow. Additional heat is carried (advected) by the flow from the hot boundary to the cool one whenever the fluid is moving.*
+
+---
 
 Various scalings result, with the new variables indicated using a prime (\\('\\)).
 \\begin{equation} \nonumber

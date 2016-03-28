@@ -1,24 +1,11 @@
----
-layout: page
-title: "Computational Geodynamics: Introduction"
-date: 2015-09-17
-modified: 2015-09-17
-category: "CompGeoDynamicsNotes"
-image:
-  feature: pages/MundusSubterraneusBanner.jpg
-  credit: "Athanasius Kircher, Mundus subterraneus (1664/65)"
----
+
+# Computational Geodynamics: Introduction
 
 <!-- TOC / Menu -->
-{% include _mathphysicsTOC.html %}
 
+![](../Diagrams/MundusSubterraneus.png)
 
-<!-- <figure id="mundus">
-<img src="../Diagrams/MundusSubterraneusOriginal.jpg">
-<figcaption>
-Athanasius Kircher, Mundus subterraneus (1664/65): Systema Ideale PYROPHYLACIORUM Subterraneorum, quorum montes <i> Vulcanii, veluti spiracula quaedam existant </i>
-</figcaption>
-</figure> -->
+*Athanasius Kircher, Mundus subterraneus (1664/65): Systema Ideale PYROPHYLACIORUM Subterraneorum, quorum montes <i> Vulcanii, veluti spiracula quaedam existant*
 
 \\[
 \require{color}
@@ -36,12 +23,9 @@ Athanasius Kircher, Mundus subterraneus (1664/65): Systema Ideale PYROPHYLACIORU
 
 Our goal is to develop an quantitative understanding of the dynamic processes within the Earth and sister planets as I have sketched in the Figure to the right. These dynamic processes are largely driven by the internal heat of the planet escaping to the surface through whatever mechanisms are available. Some of the heat is left over from the original formation of the planet, and the rest originates in the decay of radioactive elements. In the Earth's early history and elsewhere in the solar system, tidal heating, chemical segregation, and impacts have all played a role in supplying the interior heat budget. The [figure below](#earth-interior) is a schematic of the Earth's interior and something similar for Venus and Mars would be, on the face of it, much simpler.
 
-<figure>
-	<img src="../Diagrams/EarthProcessesPlume.png">
-	<figcaption>
-	A schematic of the interior of the Earth showing some of the global scale processes we seek to understand quantitatively in this course
-	</figcaption>
-</figure>
+![](../Diagrams/EarthProcessesPlume.png)
+
+*A schematic of the interior of the Earth showing some of the global scale processes we seek to understand quantitatively in this course*
 
 This is because the dynamics of the Earth is completely dominated by Plate Tectonics - a unique manifestation of interior heat loss as far as we are aware. Part of our task is to understand why plate tectonics is a possible outcome of a hot planet, but also why it is not the only possible outcome. If we can also understand how the different modes are selected for planets of different size, composition, and heat budget, then we have a powerful way to predict the geological behaviour of extrasolar planets. Plate tectonics creates a number of very efficient cycling mechanisms which link the interior of the Earth and the Atmosphere and Oceans; it may prove to be an essential ingredient for the kind of friendly world we expect to be needed to nurture (intelligent) life.
 
@@ -51,7 +35,7 @@ Global scale geodynamics is a discipline where we cannot do controlled experimen
 
 While it is not possible to do experiments at the planetary scale over geological time, it is possible to perform experiments at a physically manageable size and, by careful scaling, to generalise the results to geologically relevant space and time-scales. If these processes of interest can be understood through a mathematical description, then the equations are automatically applicable at geological time and space scales provided the assumptions which go into developing the mathematical model are still valid.
 
-We will frequently be talking about "modeling" --- people mean many different things by this and all of the following fall under the general concept of modeling:
+We will frequently be talking about "modeling" - people mean many different things by this and all of the following fall under the general concept of modeling:
 
 * Laboratory based physical models which can be scaled to give meaningful, quantitative insight into deformation at geological scales.
 * The building of mathematical descriptions of the world and their use to approximate physical "reality".

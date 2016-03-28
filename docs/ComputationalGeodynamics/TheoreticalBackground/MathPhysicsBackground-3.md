@@ -1,16 +1,6 @@
----
-layout: page
-title: "Computational Geodynamics: Convection Models"
-date: 2015-09-17
-modified: 2015-09-17
-image:
-  feature: pages/MundusSubterraneusBanner.jpg
-  credit: "Athanasius Kircher, Mundus subterraneus (1664/65)"
----
+
 
 <!-- TOC / Menu -->
-{% include _mathphysicsTOC.html %}
-
 
 \\[
 \require{color}
@@ -24,7 +14,7 @@ image:
 
 ---
 
-### Thermal Convection
+## Thermal Convection
 <!-- TODO: Convection introduction-->
 
 Thermal convection describes the a process in which a fluid organizes itself into a structured flow pattern on a macroscopic scale to transport energy. Convection may be mechanically driven by stirring, but more commonly we refer to _natural convection_ in which buoyancy due to a source of heat (and/or compositional variation) induces flow which transports and dissipates this anomalous buoyancy.
@@ -89,10 +79,12 @@ Now introduce small harmonic perturbations to the driving terms and assuming a s
 So that we can now separate variables. \\(\sigma\\) is unknown, however, if \\( \sigma < 0 \\) then
 the perturbations will decay, whereas if \\( \sigma > 0 \\) they will grow.
 
+---
+![](../Diagrams/crit_ra.png){. width="50%"}
 
-![Critical Rayleigh Number determination. A plot of growth rates for harmonic perturbations as a function of wavenumber for different ${\rm Ra}$. The critical value occurs when the maximum of the curve just touches the horizontal axis at zero.][critical-rayleigh-no]
+*Critical Rayleigh Number determination. A plot of growth rates for harmonic perturbations as a function of wavenumber for different ${\rm Ra}$. The critical value occurs when the maximum of the curve just touches the horizontal axis at zero.*
 
-[critical-rayleigh-no]: ../Diagrams/crit_ra.png
+---
 
 Substituting for the perturbations into the biharmonic equation and the linearized
 energy conservation equation gives
@@ -159,9 +151,14 @@ Having determined the conditions under which convection will develop, we next co
 
 Let's consider fully developed convection with high Rayleigh number. From observations of real fluids in laboratory situations, it is well known how this looks. High Rayleigh number convection is dominated by the advection of heat. Diffusion is too slow to carry heat far into the fluid before the buoyancy anomaly becomes unstable. This leads to thin, horizontal _boundary layers_ where diffusive heat transfer into and out of the fluid occurs. These are separated by approximately isothermal regions in the fluid interior. The horizontal boundary layers are connected by vertical boundary layers which take the form of sheets or cylindrical plumes depending on a number of things including the Rayleigh number. For the time being we consider only the sheet like downwellings since that allows us to continue working in 2D.
 
-![Boundary Layer Theory in its simplest form: assumes that the boundary layers are of constant thickness and the interior of the cell rotates as a passive lump][boundary-layer-theory]
 
-[boundary-layer-theory]: ../Diagrams/blt.png
+---
+
+![](../Diagrams/blt.png){. width="75%"}
+
+*Boundary Layer Theory in its simplest form: assumes that the boundary layers are of constant thickness and the interior of the cell rotates as a passive lump*
+
+---
 
 Boundary layer analysis is a highly sophisticated field, and is used in a broad range of situations where differences in scales between different physical effects produce narrow accommodation zones where the _weaker_ term dominates (e.g viscosity in an otherwise invicid flow around an obstacle).
 
@@ -218,11 +215,14 @@ so the boundary layer does not become more or less stable with increasing Raylei
 		\end{center}
 	\end{figure} -->
 
-![Boundary Layer Theory which accounts for the thickness variations along the
-boundary layer as it cools away from the upwelling][boundary-layer-theory2]
+---
 
-[boundary-layer-theory2]: ../Diagrams/blt2.png
+![](../Diagrams/blt2.png){. width="75%"}
 
+*Boundary Layer Theory which accounts for the thickness variations along the
+boundary layer as it cools away from the upwelling*
+
+---
 Another wrinkle can be added to the boundary layer theory by trying to account for the variation  in the boundary layer thickness as it moves along the horizontal boundary. This refinement in the theory can account for the form of this thickness, the potential energy change in rising or sinking plumes, and the aspect ratio of the convection (width to height of convection roll) by maximizing Nusselt number as a function of aspect ratio.
 
 Consider the boundary layer to be very thin above the upwelling plume (left side). As it moves to the right, it cools and the depth to any particular isotherm increases (this is clearly seen in the simulation). This can be treated exactly like a one dimensional problem if we work in the Lagrangian frame of reference attached to the boundary layer. That is, take the 1D half-space cooling model and replace the time with \\(x_1/v\\) (cf. the advection equation in which time and velocity / lengths are mixed).
@@ -249,11 +249,13 @@ The boundary conditions on \\(\theta\\) are simple:
 \\end{align}
 
 
-![Cooling half-space calculation for a range of times (here everything is scaled to 1)][cooling-half-space]
+---
 
-[cooling-half-space]: ./../Diagrams/CoolingHalfSpaceSolutions1.png
+![](../Diagrams/CoolingHalfSpaceSolutions1.png){. width="75%"}
 
+*Cooling half-space calculation for a range of times (here everything is scaled to 1*
 
+---
 
 In place of \\(t,x_2\\), we use the similarity transformation,
 

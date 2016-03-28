@@ -1,17 +1,3 @@
----
-layout: page
-title: "Computational Geodynamics: Miscellaneous"
-date: 2015-09-17
-modified: 2015-09-17
-image:
-  feature: pages/MundusSubterraneusBanner.jpg
-  credit: "Athanasius Kircher, Mundus subterraneus (1664/65)"
----
-
-<!-- TOC / Menu -->
-{% include _mathphysicsTOC.html %}
-<!-- *_ -->
-
 
 \\[
 \require{color}
@@ -25,11 +11,15 @@ image:
 
 ---
 
-### Rayleigh-Taylor Instability & Diapirism
+## Rayleigh-Taylor Instability & Diapirism
 
-![Salt diapirs result when a buried layer of salt(a,b) becomes convectively unstable and rises through the overlying sediment layers (c,d). The idealized geometry for the Rayleigh-Taylor instability problem is outlined in the lower diagram][rayleigh-taylor]
+---
 
-[rayleigh-taylor]: ../Diagrams/diapirs.png
+![](../Diagrams/diapirs.png){. width="75%" id="rayleigh-taylor"}
+
+*Salt diapirs result when a buried layer of salt(a,b) becomes convectively unstable and rises through the overlying sediment layers (c,d). The idealized geometry for the Rayleigh-Taylor instability problem is outlined in the lower diagram*
+
+---
 
 Diapirism is the buoyant upwelling of rock which is lighter than its surroundings. This can include mantle plumes and other purely thermal phenomena but it often applied to compositionally distinct rock masses such as melts infiltrating the crust (in the Archean) or salt rising through denser sediments.
 
@@ -90,15 +80,17 @@ to give the general form of the solution in this situation to be
 
 or, equivalently,
 
-\\begin{equation}
+\begin{equation}
 	\psi = \sin kx \left ( A _ 1 \cosh ky + B _ 1 \sinh ky + C _ 1 y \cosh ky + D _ 1 y \sinh ky  \right )
-\\end{equation}
+    \label{eq:biharmsoln1}  
+\end{equation}
 
-\label{eq:biharmsoln1}  
-\textrm{or, equivalently}
-	\psi &= \sin kx \left ( A _ 1 \cosh ky + B _ 1 \sinh ky + C _ 1 y \cosh ky + D _ 1 y \sinh ky  \right )
-\label{eq:biharmsoln2}
+or, equivalently
 
+\begin{equation}
+	\psi = \sin kx \left ( A _ 1 \cosh ky + B _ 1 \sinh ky + C _ 1 y \cosh ky + D _ 1 y \sinh ky  \right )
+    \label{eq:biharmsoln2}
+\end{equation}
 
 
 This equation applies in each of the layers separately. We therefore need to find two sets of constants $\{A_1,B_1,C_1,D_1\}$ and $\{A_2,B_2,C_3,D_4\}$ by the application of suitable boundary conditions. These are known in terms of the velocities in each layer, $\mathbf{v}_1 = \mathbf{i} u_1 +\mathbf{j} v_1$ and $\mathbf{v}_2 = \mathbf{i} u_2 +\mathbf{j} v_2$:
@@ -171,18 +163,20 @@ To eliminate $A_1$, we have to consider the physical scales inherent in the prob
 	\end{center}
 \end{figure} -->
 
+---
 
-![The restoring force for a stable layering is proportional to the excess density when a fluid element is displaced across the boundary][rayleigh-taylor2]
+![](../Diagrams/diapir2.png){. width="75%" id="rayleigh-taylor2"}
 
-[rayleigh-taylor2]: ../Diagrams/diapir2.png
+*The restoring force for a stable layering is proportional to the excess density when a fluid element is displaced across the boundary*
+
+---
 
 Consider what happens when the fluid above the interface is lighter than the fluid below -- this situation is stable so we expect the layering to be preserved, and if the interface is disturbed the disturbance to decay. This implies that there must be a restoring force acting on  an element of fluid which is somehow displaced across the boundary at $y=0$ [(Figure above)](#rayleigh-taylor2).
 
 This restoring force is due to the density difference between the displaced material and the layer in which it finds itself. The expression for the force is exactly that from Archimedes principle which explains how a boat can float (only in the opposite direction)
 
-
 \begin{equation} \nonumber
-	\left. F_2 \right|_{y=0} = \delta x g w (\rho _ 2 - \rho _ 1)
+	\left. F_2 \right| _ {y=0} = \delta x g w (\rho _ 2 - \rho _ 1)
 \end{equation}
 
 
@@ -190,7 +184,7 @@ which can be expressed as a normal stress difference (assumed to apply, once aga
 
 \\[
 \begin{equation} \nonumber
-	\left. P_2 \right|_{y=0} = g w (\rho_2 - \rho_1)
+	\left. P_2 \right| _ {y=0} = g w (\rho _ 2 - \rho _ 1)
 \end{equation}
 \\]
 
@@ -226,9 +220,13 @@ The methodology used here is instructive, as it can be used in a number of diffe
 
 #### Post-Glacial Rebound
 
-![The relaxation of the Earth's surface after removal of an ice load][postglacial]
+---
 
-[postglacial]: ../Diagrams/postglac.png
+![](../Diagrams/postglac.png){. width="75%" id="postglacial-relaxation"}
+
+*The relaxation of the Earth's surface after removal of an ice load*
+
+---
 
 
 In the postglacial rebound problem, consider a viscous half space with an imposed topography at $t=0$. The ice load is removed at $t=0$ and the interface relaxes back to its original flat state.
@@ -249,9 +247,13 @@ The solution method used for the Rayleigh Taylor problem can also be used in det
 
 ### Folding of Layered (Viscous) Medium
 
-![Instability in a thin, viscous layer compressed from both ends][viscous-folding]
+---
 
-[viscous-folding]: ../Diagrams/fold.png
+![](../Diagrams/fold.png){. width="75%" id="folding-layer"}
+
+*Instability in a thin, viscous layer compressed from both ends*
+
+---
 
 If a thin viscous layer is compressed from one end then it may develop buckling instabilities in which velocities grow perpendicular to the plane of the layer. If the layer is embedded between two semi-infinite layers of viscous fluid with viscosity much smaller than the viscosity of the layer, then Biot theory tells us the wavelength of the initial buckling instability, and the rate at which it grows.
 

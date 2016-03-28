@@ -1,12 +1,3 @@
----
-layout: page
-title: "Computational Geodynamics: Advection"
-date: 2015-09-17
-modified: 2015-09-17
-image:
-  feature: pages/MundusSubterraneusBanner.jpg
-  credit: "Athanasius Kircher, Mundus subterraneus (1664/65)"
----
 
 
 \\[
@@ -19,9 +10,7 @@ image:
 \newcommand{\Emerald }[1]{\textcolor[rgb]{0.0,0.7,0.3}{ #1}}
 \\]
 
-<!-- TOC / Menu -->
-{% include _numericsTOC.html %}
-<!-- *_ -->
+
 
 We now move on to look at a different problem which also brings a few surprises when we attempt to find a straightforward numerical treatment. Specifically, the equations that govern transport of a quantity by a moving fluid (advection). This seems pretty straightforward as we simply have to account for a concentration being moved around by a velocity vector field. There are multiple tricks involved in doing this accurately.
 
@@ -40,9 +29,13 @@ We have learned a number of things --- in particular
 
 Advection is a fundamental concept in fluid mechanics, get it makes the lives of fluid dynamicists much more difficult. It can be particularly problematic in numerical modeling. This is worth having in mind when we discuss different numerical methods because in application to solid Earth dynamics, advection will be a major issue with any method we choose.
 
-![Advection pure and simple --- with no diffusion, fluid motion winds up initially local regions into long, convoluted tendrils][advection]
+---
 
-[advection]: ../Diagrams/advect_mix1.png
+![](../Diagrams/advect_mix1.png)
+
+*Advection pure and simple --- with no diffusion, fluid motion winds up initially local regions into long, convoluted tendrils*
+
+---
 
 As we discussed previously in dealing with approximate analytic solutions, the solution to all our advection woes is to deal with a coordinate system locked to the fluid. Unfortunately, while this approach works well in some situations -- predominantly solid mechanics and engineering applications where total deformation is generally no more than a few percent strain -- in fluids, the local coordinate system becomes quite hard to track. In the figure above, a small, square region of fluid has been tagged and is followed during the deformation induced by a simple convection roll. It is clear that a coordinate system based on initially orthogonal sets of axes rapidly becomes unrecognizably distorted.
 
@@ -52,9 +45,15 @@ If the dye can diffuse then, the finer scales of the tendrils will in fact be mi
 
 ### Numerical Example in 1D
 
-![Setup for a first attempt at a numerical advection scheme on a fixed discretization. After two timesteps, the sharp front has become smoothed despite introducing no genuine diffusion][advection2]
+---
 
-[advection2]: ../Diagrams/eul_adv1.png
+
+
+![](../Diagrams/eul_adv1.png)
+
+*Setup for a first attempt at a numerical advection scheme on a fixed discretization. After two timesteps, the sharp front has become smoothed despite introducing no genuine diffusion*
+
+---
 
 
 Let us follow the usual strategy and consider the simplest imaginable advection equation:

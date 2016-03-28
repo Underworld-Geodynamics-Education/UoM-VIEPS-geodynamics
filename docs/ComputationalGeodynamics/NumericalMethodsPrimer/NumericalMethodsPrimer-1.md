@@ -1,5 +1,5 @@
 
-## "Computational Geodynamics: Introduction to Numerical Methods"
+## Computational Geodynamics: Introduction to Numerical Methods
 
 \\[
 \newcommand{\dGamma}{\mathbf{d}\boldsymbol{\Gamma}}
