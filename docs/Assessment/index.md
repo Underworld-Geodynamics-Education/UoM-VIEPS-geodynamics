@@ -17,8 +17,9 @@ The assessment of this course is in two parts:
        convection: how to ensure you have good resolution, how to obtain results in a reasonable amount of time, how
        to be sure that any time-dependence is accounted for correctly.
 
+     - **Either:**
 
-     - **Either:** Consider the extensional model case which we dealt with in class. Can you add sediment deposition to the extension model by converting the sticky air into slightly heavier material when it falls below a reference level ? Does this change the pattern of deformation ? Can you visualise the pattern of deposition as a function of time ? Can you reverse the sense of deformation and invert the basin ? Can you make an unconformity ? How is sediment loading important for the evolution of basins in the Earth ?
+        Consider the extensional model case which we dealt with in class. Can you add sediment deposition to the extension model by converting the sticky air into slightly heavier material when it falls below a reference level ? Does this change the pattern of deformation ? Can you visualise the pattern of deposition as a function of time ? Can you reverse the sense of deformation and invert the basin ? Can you make an unconformity ? How is sediment loading important for the evolution of basins in the Earth ?
 
      - **Or:** Subduction zone model based assignment (TBA)
 
