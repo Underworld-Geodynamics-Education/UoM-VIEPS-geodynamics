@@ -84,24 +84,25 @@ RUN chown -R profldiablo:profldiablo /underworld
 # get underworld, compile, delete some unnecessary files, trust notebooks
 
 RUN git clone --branch "development" --single-branch https://github.com/underworldcode/underworld2 && \
-    cd underworld2/libUnderworld && \
-    ./configure.py               && \
-    ./scons.py                   && \
-    cd libUnderworldPy           && \
-    ./swigall.py                 && \
-    cd ..                        && \
-    ./scons.py                   && \
-    rm .sconsign.dblite          && \
-    rm -fr .sconf_temp           && \
-    cd build                     && \
-    rm -fr libUnderworldPy       && \
-    rm -fr StGermain             && \
-    rm -fr gLucifer              && \
-    rm -fr Underworld            && \
-    rm -fr StgFEM                && \
-    rm -fr StgDomain             && \
-    rm -fr PICellerator          && \
-    rm -fr Solvers               && \
+    echo "clone on April 2, 2016" && \
+    cd underworld2/libUnderworld  && \
+    ./configure.py                && \
+    ./scons.py                    && \
+    cd libUnderworldPy            && \
+    ./swigall.py                  && \
+    cd ..                         && \
+    ./scons.py                    && \
+    rm .sconsign.dblite           && \
+    rm -fr .sconf_temp            && \
+    cd build                      && \
+    rm -fr libUnderworldPy        && \
+    rm -fr StGermain              && \
+    rm -fr gLucifer               && \
+    rm -fr Underworld             && \
+    rm -fr StgFEM                 && \
+    rm -fr StgDomain              && \
+    rm -fr PICellerator           && \
+    rm -fr Solvers                && \
     chown -R profldiablo:profldiablo /underworld
 
 RUN find /underworld/underworld2/docs -name \*.ipynb | xargs jupyter trust && \
