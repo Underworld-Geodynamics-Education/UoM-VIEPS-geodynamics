@@ -1,4 +1,4 @@
-FROM lmoresi/unimelb-underworld-dev-base:v2016.Q1
+FROM lmoresi/unimelb-underworld-dev-base:v2016.Q2
 
 ## =============================================================
 ## base - image ... whatever functionality you want to provide !
