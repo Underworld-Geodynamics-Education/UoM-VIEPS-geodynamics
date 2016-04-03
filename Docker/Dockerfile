@@ -28,7 +28,6 @@ RUN pip install mkdocs
 RUN mkdir /geodynamics && \
     chown -R profldiablo:profldiablo /geodynamics
 
-
 WORKDIR /geodynamics
 
 ## These are the build templates etc

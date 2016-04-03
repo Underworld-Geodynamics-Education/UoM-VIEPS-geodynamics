@@ -12,4 +12,4 @@ First of all we will work through some hands-on exercises to build up a general 
 
 Templates for this exercise are located in the <a href="/notebooks/www/Introduction/Notebooks"> Introduction </a> folder.
 
-As well as the notebook exercises we go through in class, the <a href="/notebooks/www/Underworld/Notebooks"> Underworld </a> folder also contains all the documentation for the code which is also in the form of notebooks.
+As well as the notebook exercises we go through in class, the <a href="/notebooks/www/Underworld/"> Underworld </a> folder also contains all the documentation for the code which is also in the form of notebooks.

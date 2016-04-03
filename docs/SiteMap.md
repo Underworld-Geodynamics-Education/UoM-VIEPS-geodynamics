@@ -11,9 +11,11 @@ Site map for VIEPS INP course material
 
 ## Notebooks
 
-   * <a href="/notebooks/Notebooks/Mapping"> Mapping </a> - Notebooks for the Mapping tutorial
-   * <a href="/notebooks/Notebooks/SolveMathProblems"> Mathing </a> - Learn not to be nervous of mathematics through python
-   * <a href="/notebooks/Notebooks/Numpy"> Numpy Exercises </a> - set in the [Python Introduction Lessons](https://dansand.gitbooks.io/python/content/)
+   * <a href="/notebooks/www/Introduction/Notebooks"> Introduction to Underworld </a> - Stokes flow and buoyancy.
+   * <a href="/notebooks/www/MantleConvection/Notebooks"> Mantle Convection Models </a>
+   * <a href="/notebooks/www/DynamicTopography/Notebooks"> Dynamic Topography </a>
+   * <a href="/notebooks/www/Rheology/Notebooks"> Rheology and Localisation </a> (and application to Extension modeling).
+   * <a href="/notebooks/www/Subduction/Notebooks"> Subduction zones </a>
 
 ## Other
 
@@ -24,9 +26,7 @@ Site map for VIEPS INP course material
 
 ## External
    * [VIEPS website](http://www.vieps.org.au)
-   * --INP--  [handbook entry](https://handbook.unimelb.edu.au/view/2016/COMP90059)
-   * [Python Introduction Lessons](https://dansand.gitbooks.io/python/content/)
-   * [RezBaz for help with digital research](http://melbourne.resbaz.edu.au/)
    * [Louis Moresi's Home Page](http://www.moresi.info)
    * [email Louis Moresi](mailto:Louis.Moresi@unimelb.edu.au)
    * [email Rebecca Farrington](mailto:rebecca.farrington@unimelb.edu.au)
+   * [RezBaz for help with digital research](http://melbourne.resbaz.edu.au/)
