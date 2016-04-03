@@ -46,6 +46,9 @@ USER profldiablo
 
 RUN ./scripts/run-sitebuilder
 
+RUN mkdir /geodynamics/www/external
+VOLUME    /geodynamics/www/external
+
 ENV SHELL=/bin/bash
 
 # Launch the notebook server from the Notebook directory
