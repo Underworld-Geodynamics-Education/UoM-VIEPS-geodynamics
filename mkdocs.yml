@@ -21,7 +21,10 @@ pages:
     - "Introduction To Geodynamics": ComputationalGeodynamics/TheoreticalBackground/index.md
     - "Numerical Methods":           ComputationalGeodynamics/NumericalMethodsPrimer/index.md
     - "Underworld User Guides":      Underworld/index.md
+    - "Selected Lecture Materials":  LectureNotes/index.md
+    
 - _JustBuildThese:  # not added to the navigation menu
+    - ComputationalGeodynamics/index.md
     - ComputationalGeodynamics/TheoreticalBackground/MathPhysicsBackground-1.md
     - ComputationalGeodynamics/TheoreticalBackground/MathPhysicsBackground-2.md
     - ComputationalGeodynamics/TheoreticalBackground/MathPhysicsBackground-3.md

@@ -8,6 +8,9 @@ Site map for VIEPS INP course material
    * [Home](index.md) - (also accessible through the `Jupyter` logo in notebooks)
    * [Index](SiteMap.md) - this site map !
    * [Assessment](Assessment/index.md) - Assessment and instructions
+   * [Lecture Notes](LectureNotes/index.md) - Assessment and instructions
+   * [Geodynamics Notes](ComputationalGeodynamics/index.md) - Assessment and instructions
+
 
 ## Notebooks
 
