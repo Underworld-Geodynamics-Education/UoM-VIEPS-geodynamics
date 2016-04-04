@@ -54,5 +54,7 @@ ENV SHELL=/bin/bash
 # Launch the notebook server from the Notebook directory
 # but perhaps there is something else that would do this.
 
-# CMD scripts/run-jupyter -p 8080
-CMD ["scripts/run-jupyter", "-p", " 8080"]
+
+EXPOSE 8080
+
+CMD ["scripts/run-jupyter", "-p", "8080"]
