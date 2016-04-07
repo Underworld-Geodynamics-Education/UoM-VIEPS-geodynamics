@@ -56,5 +56,6 @@ ENV SHELL=/bin/bash
 
 
 EXPOSE 8080
+VOLUME /geodynamics/www/external
 
 CMD ["scripts/run-jupyter", "-p", "8080"]
