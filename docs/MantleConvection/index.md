@@ -4,5 +4,4 @@ In the lectures we discovered that the fiendishly complicated equations of motio
 
 We will also learn about how the convection problem is solved numerically and some of the tricks you might need to know in order to complete the take home exercise.
 
-
 The notebooks are found in the  <a href="/notebooks/www/MantleConvection/Notebooks"> Convection </a> folder.
