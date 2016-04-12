@@ -21,9 +21,28 @@ The assessment of this course is in two parts:
 
         Consider the extensional model case which we dealt with in class. Can you add sediment deposition to the extension model by converting the sticky air into slightly heavier material when it falls below a reference level ? Does this change the pattern of deformation ? Can you visualise the pattern of deposition as a function of time ? Can you reverse the sense of deformation and invert the basin ? Can you make an unconformity ? How is sediment loading important for the evolution of basins in the Earth ?
 
-     - **Or:** Subduction zone model based assignment (TBA)
+     - **Or:** Subduction zone model based assignment
+
+       As instructed by Rebecca in the class with the following follow up notes:
+
+       **Resolution test**
+
+       * Produce a range differing grid resolution models.  
+       * When do you know the model is numerically resolved ?  
+       * What resolution have you chosen to proceed with? Why?  
+
+
+       **Force balance of subduction**
+
+       * Produce a range of models differing driving and resisting forces.
+       * Quantify the subducting plates evolution. Discuss.
+       * The overriding plate has not been included here. Can you quantify the deformation it would experience?
+       * Discuss the evolution of the trench, the overriding plate and the subducting plate in the models produced above.
+       * Discuss the resulting tectonic setting.
+
 
      For each of these exercises you will need to complete the computational part in a notebook and give a 1000 word summary of the results of this work which also includes (about half) a description of the application in the context of Earth dynamics.
+
 
 
 ---    
