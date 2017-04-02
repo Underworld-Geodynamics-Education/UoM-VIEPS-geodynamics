@@ -38,10 +38,12 @@ for user in userList:
     siteDir = os.path.join(sitePath,"build","www"+user)
     uwDeployDir = os.path.join(siteDir, "Underworld")
 
+
     print "Building {:s}".format(siteDir)
     call("cd {:s} && mkdocs build --site-dir {:s}".format(sitePath, siteDir), shell=True)
 
-    call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"examples"), uwDeployDir), shell=True)
+    call ("mkdir -p {:s}".format(uwDeployDir))
+    call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"examples"),     uwDeployDir), shell=True)
     call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"user_guide"), uwDeployDir), shell=True)
     call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"publications"), uwDeployDir), shell=True)
-    call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"api_doc"), uwDeployDir), shell=True)
+    call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"api_doc"),      uwDeployDir), shell=True)

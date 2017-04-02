@@ -18,7 +18,7 @@ call("jupyter nbextension enable exercise/main", shell=True)
 
 # The root user is www
 
-users   = { "www" : ["vieps-geo-boss", 8080 ],
+users   = { "www"       : ["vieps-geo-boss", 8080 ],
             "build/www1": ["vieps-geo-1",    8081 ],
             "build/www2": ["vieps-geo-2",    8082 ],
             "build/www3": ["vieps-geo-3",    8083 ],
