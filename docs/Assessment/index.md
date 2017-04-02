@@ -5,11 +5,11 @@ The assessment of this course is in two parts:
 
   1. Exercises to be completed each day of the course. These are short and intended to be completed as a class exercise but they do need to be submitted !
 
-     See <a href="/notebooks/www/Assessment/InClassProblemSets"> In Class Notebooks </a>
+     See <a href="/notebooks/Assessment/InClassProblemSets"> In Class Notebooks </a>
 
   2. Completion of specific exercises which build upon the course examples and which will be marked.   These exercises are due one week after the completion of the course unless (or as agreed)
 
-     See <a href="/notebooks/www/Assessment/TakeHomeProblemSets"> Take Home Notebooks </a>
+     See <a href="/notebooks/Assessment/TakeHomeProblemSets"> Take Home Notebooks </a>
 
      - Exploring the relationship between Nusselt Number and Rayleigh number and relate the results to
        the dynamic Earth. This exercise requires running the convection model from the course at different

@@ -1,4 +1,4 @@
-# VIEPS Geodynamics 2016
+# VIEPS Geodynamics 2017
 
 
 This course provides an introduction to geodynamics with hands-on tutorials using the
@@ -7,9 +7,9 @@ This course provides an introduction to geodynamics with hands-on tutorials usin
 ## Instructors
 
   * Louis Moresi
-  * Rebecca Farrington
-  * John Mansour (Underworld)
-  * Gareth Kennedy (Underworld)
+  * Adam Beall (guest lecture)
+  * Rebecca Farrington (guest lecture)
+  * Ting Yang (guest lecture)
 
 ## Course Content
 

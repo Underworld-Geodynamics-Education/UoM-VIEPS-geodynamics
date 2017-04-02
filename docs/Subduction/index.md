@@ -6,4 +6,4 @@ In fact, it is often easier to think about the cool thermal boundary layer (the 
 
 _Led by Rebecca Farrington_
 
-The notebooks are found in the  <a href="/notebooks/www/Subduction/Notebooks"> Subduction </a> folder.
+The notebooks are found in the  <a href="/notebooks/Subduction/Notebooks"> Subduction </a> folder.

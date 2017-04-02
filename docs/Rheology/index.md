@@ -6,4 +6,4 @@ Our numerical examples deal with "shear band" formation. This is a well known ph
 
 Sand box experiments usually interpret shear bands as being equivalent to faults in the crust. In a structural sense they do serve as a good analogy. The same "localisation" property is clearly at work in plate tectonics since the lithosphere organises itself to deform in narrow plate boundaries even if the forces come from large-scale convection cells with a relatively smooth velocity distribution.
 
-The notebooks are found in the  <a href="/notebooks/www/Rheology/Notebooks"> Rheology </a> folder.
+The notebooks are found in the  <a href="/notebooks/Rheology/Notebooks"> Rheology </a> folder.

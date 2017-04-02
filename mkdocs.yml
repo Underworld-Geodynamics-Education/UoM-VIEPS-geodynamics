@@ -17,12 +17,13 @@ pages:
     - "4 - Rheology & Localisation": Rheology/index.md
     - "5 - Subduction zones":        Subduction/index.md
     - "Assessment":                  Assessment/index.md
+
 - Notes:
     - "Introduction To Geodynamics": ComputationalGeodynamics/TheoreticalBackground/index.md
     - "Numerical Methods":           ComputationalGeodynamics/NumericalMethodsPrimer/index.md
     - "Underworld User Guides":      Underworld/index.md
     - "Selected Lecture Materials":  LectureNotes/index.md
-    
+
 - _JustBuildThese:  # not added to the navigation menu
     - ComputationalGeodynamics/index.md
     - ComputationalGeodynamics/TheoreticalBackground/MathPhysicsBackground-1.md

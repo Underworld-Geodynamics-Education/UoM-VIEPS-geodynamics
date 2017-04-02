@@ -12,4 +12,4 @@ Our goal in this section of the course is to develop a good intuition for dynami
 
    3. Instantaneous flow models where we look at the surface stresses and try to relate the topography to the viscosity structure.
 
- The notebooks live in the  <a href="/notebooks/www/DynamicTopography/Notebooks"> Dynamic Topography Notebooks </a> folder.
+ The notebooks live in the  <a href="/notebooks/DynamicTopography/Notebooks"> Dynamic Topography Notebooks </a> folder.

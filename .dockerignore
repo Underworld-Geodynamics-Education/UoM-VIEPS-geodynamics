@@ -2,7 +2,8 @@
 .ipynb_checkpoints
 
 ## These will probably not be added anyway since the assumption here is that we
-## only add exactly the directories we need. 
+## only add exactly the directories we need. It might help in the build process
+## to drop the size of the context
 
 # Private Parts
 

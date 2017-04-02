@@ -10,6 +10,6 @@ In order to explore how global geodynamics works, we will be using the computati
 
 First of all we will work through some hands-on exercises to build up a general understanding of the way the underworld code works, how its concepts are expressed in python, and how to run the given examples.
 
-Templates for this exercise are located in the <a href="/notebooks/www/Introduction/Notebooks"> Introduction </a> folder.
+Templates for this exercise are located in the <a href="/notebooks/Introduction/Notebooks"> Introduction </a> folder.
 
-As well as the notebook exercises we go through in class, the <a href="/notebooks/www/Underworld/"> Underworld </a> folder also contains all the documentation for the code which is also in the form of notebooks.
+As well as the notebook exercises we go through in class, the <a href="/notebooks/Underworld/"> Underworld </a> folder also contains all the documentation for the code which is also in the form of notebooks.
