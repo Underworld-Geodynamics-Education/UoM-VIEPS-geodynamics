@@ -13,7 +13,7 @@ siteDir = os.path.join(sitePath,"www")
 
 print "Building {:s}".format(siteDir)
 
-call("cd {:s} && mkdocs build --clean".format(sitePath), shell=True)
+call("cd {:s} && mkdocs build --theme united --clean".format(sitePath), shell=True)
 
 
 uwDocDir = "/underworld/underworld2/docs" # This assumes the unix build

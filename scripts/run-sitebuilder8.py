@@ -18,22 +18,6 @@ notebookPath = os.path.join(sitePath,"Notebooks")
 # Note, such changes are not effected unless the site is rebuilt, but also,
 # the rebuild does not nuke changes by the root user.
 
-siteDir = os.path.join(sitePath,"www")
-
-print "Building {:s}".format(siteDir)
-
-call("cd {:s} && mkdocs build --theme united --clean".format(sitePath), shell=True)
-
-uwDocDir = "/underworld/underworld2/docs" # This assumes the unix build
-uwDeployDir = os.path.join(siteDir, "Introduction")
-
-call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"examples"), uwDeployDir), shell=True)
-call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"user_guide"), uwDeployDir), shell=True)
-call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"publications"), uwDeployDir), shell=True)
-
-uwDeployDir = os.path.join(siteDir, "Underworld")
-call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"api_doc"), uwDeployDir), shell=True)
-
 userList = [ str(i) for i in range(1,9) ]
 
 for user in userList:
