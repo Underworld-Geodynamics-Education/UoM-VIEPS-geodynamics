@@ -6,6 +6,7 @@ Site map for VIEPS INP course material
 ## Pages
 
    * [Home](index.md) - (also accessible through the `Jupyter` logo in notebooks)
+   * [Underworld](Introduction/index.html) - Software
    * [Index](SiteMap.md) - this site map !
    * [Assessment](Assessment/index.md) - Assessment and instructions
    * [Lecture Notes](LectureNotes/index.md) - Assessment and instructions
@@ -14,7 +15,10 @@ Site map for VIEPS INP course material
 
 ## Notebooks
 
-   * <a href="/notebooks/Introduction/Notebooks"> Introduction to Underworld </a> - Stokes flow and buoyancy.
+   * Reference guide to the Underworld software
+     * <a href="/notebooks/Introduction/user_guide"> User Guide </a>
+     * <a href="/notebooks/Introduction/examples"> Examples </a> (cookbook)
+     * <a href="/notebooks/Introduction/publications"> Published examples </a> (advanced)
    * <a href="/notebooks/MantleConvection/Notebooks"> Mantle Convection Models </a>
    * <a href="/notebooks/DynamicTopography/Notebooks"> Dynamic Topography </a>
    * <a href="/notebooks/Rheology/Notebooks"> Rheology and Localisation </a> (and application to Extension modeling).
@@ -31,5 +35,3 @@ Site map for VIEPS INP course material
    * [VIEPS website](http://www.vieps.org.au)
    * [Louis Moresi's Home Page](http://www.moresi.info)
    * [email Louis Moresi](mailto:Louis.Moresi@unimelb.edu.au)
-   * [email Rebecca Farrington](mailto:rebecca.farrington@unimelb.edu.au)
-   * [RezBaz for help with digital research](http://melbourne.resbaz.edu.au/)

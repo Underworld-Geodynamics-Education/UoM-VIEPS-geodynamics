@@ -48,6 +48,11 @@ ADD docs docs
 #     rsync -av /underworld/underworld2/docs/publications /geodynamics/docs/Underworld/
 
 
+# script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
+RUN printf "#\041/bin/sh \n rm -f /tmp/.X99-lock && xvfb-run -a -s '-screen 0 1600x1200x16' \$@" >> /usr/local/bin/xvfbrun.sh && \
+    chmod +x /usr/local/bin/xvfbrun.sh
+
+
 RUN ./scripts/run-sitebuilder.py
 
 RUN mkdir /geodynamics/www/external
@@ -62,4 +67,4 @@ ENV SHELL=/bin/bash
 
 EXPOSE 8080
 
-CMD ["scripts/run-jupyter.py", "-p", "8080"]
+CMD ["xvfbrun.sh ", " scripts/run-jupyter.py "]

@@ -33,7 +33,7 @@ users   = { "www"       : ["vieps-geo-boss", 8080 ],
 for dir in users.keys():
     password = users[dir][0]
     port     = users[dir][1]
-    call( "cd {:s} && nohup jupyter notebook --port={:d} --ip=0.0.0.0 --no-browser\
+    call( "cd {:s} && jupyter notebook --port={:d} --ip=0.0.0.0 --no-browser\
            --NotebookApp.token={:s} --NotebookApp.default_url=/files/index.html &".format(dir, port, password), shell=True )
 
 # Don't exit

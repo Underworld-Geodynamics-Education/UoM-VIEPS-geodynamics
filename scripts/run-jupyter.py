@@ -22,7 +22,7 @@ call("jupyter nbextension enable exercise/main", shell=True)
 dir      = "www"
 password = "vieps-geo-0"
 port     = 8080
-call( "cd {:s} && nohup jupyter notebook --port={:d} --ip=0.0.0.0 --no-browser\
+call( "cd {:s} &&  jupyter notebook --port={:d} --ip=0.0.0.0 --no-browser\
        --NotebookApp.token={:s} --NotebookApp.default_url=/files/index.html &".format(dir, port, password), shell=True )
 
 # Don't exit

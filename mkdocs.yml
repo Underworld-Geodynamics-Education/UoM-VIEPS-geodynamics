@@ -50,13 +50,13 @@ pages:
 extra:
     nav_links:
         - ["Live Content",
-            ["File Browser", "/notebooks/www/" ],
+            ["File Browser", "/tree" ],
             ["Terminal", "/terminals/1" ],
-            ["Console",  "/tree/Notebooks#running" ]
+            ["Console",  "/tree#running" ]
           ]
         - ["Assessment",
-            ["In Class Assessment", "/tree/www/Assessment/InClassProblemSets"],
-            ["Take Home Assessment", "/tree/www/Assessment/TakeHomeProblemSets"],
+            ["In Class Assessment", "/tree/Assessment/InClassProblemSets"],
+            ["Take Home Assessment", "/tree/Assessment/TakeHomeProblemSets"],
           ]
 
 

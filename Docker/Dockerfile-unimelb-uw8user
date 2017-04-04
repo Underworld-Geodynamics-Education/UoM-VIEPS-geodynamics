@@ -1,61 +1,32 @@
-FROM lmoresi/unimelb-debian-uw:2017.03.29
+FROM lmoresi/docker-vieps-geo:2017
 
 ## =============================================================
 ## base - image ... whatever functionality you want to provide !
 ## This is the underworld dev image with some altered defaults.
 ##
-## Build this from the root directory ...
-##
-## % docker build -t geodynamics-course-image -f Docker/Dockerfile
-##
-## The dockerfile builds an image from this content, and the underworld user guide
-## and serves the sample web pages and notebooks at port 8888
-##
-## % docker run -p 8181:8888 --name="docker-web-notebooks-test" -t lmoresi/lmoresi/docker-web-notebooks-module
-## and then browse the docker VM ip address on port 8181 (for example)
-##
-## OR just use kitematic and click on the preview image
+## This just substitutes the run command and opens the relevant ports
 ##
 ## =============================================================
 
-## Grab (this) content from github
+# This is best done within the container from the root directory
+# when the container is running (particularly if the build area
+# is external )
+# RUN ./scripts/run-sitebuilder8.py
 
-## Link your content to the "docs" directory at the root level of this module
-## If you don't have any content then use the example content !!
+RUN mkdir build && \
+    mkdir build/www1 && \
+    mkdir build/www2 && \
+    mkdir build/www3 && \
+    mkdir build/www4 && \
+    mkdir build/www5 && \
+    mkdir build/www6 && \
+    mkdir build/www7 && \
+    mkdir build/www8
 
-
-RUN pip install \
-    https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master \
-    jupyter_nbextensions_configurator
-
-RUN jupyter contrib nbextension install --system && \
-    jupyter nbextensions_configurator enable --system
-
-RUN pip install mkdocs mkdocs-bootswatch
-
-RUN mkdir /geodynamics
-WORKDIR   /geodynamics
-
-## These are the build templates etc
-
-ADD mkdocs.yml mkdocs.yml
-ADD jupyter-server-theme jupyter-server-theme
-ADD scripts scripts
-ADD docs docs
-
-RUN ./scripts/run-sitebuilder8.py
-
-RUN mkdir /geodynamics/www/external
-VOLUME    /geodynamics/www/external
-
-
-ENV SHELL=/bin/bash
 
 # Launch the notebook server from the Notebook directory
 # but perhaps there is something else that would do this.
 
-
 EXPOSE 8080 8081 8082 8082 8084 8085 8086 8087 8088
-ENTRYPOINT ["/usr/local/bin/tini", "--"]
 
-CMD scripts/run-jupyter8.py
+CMD ["xvfbrun.sh ", " scripts/run-jupyter8.py "]

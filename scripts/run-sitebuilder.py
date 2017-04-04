@@ -17,9 +17,11 @@ call("cd {:s} && mkdocs build --clean".format(sitePath), shell=True)
 
 
 uwDocDir = "/underworld/underworld2/docs" # This assumes the unix build
-uwDeployDir = os.path.join(siteDir, "Underworld")
+uwDeployDir = os.path.join(siteDir, "Introduction")
 
 call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"examples"), uwDeployDir), shell=True)
 call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"user_guide"), uwDeployDir), shell=True)
 call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"publications"), uwDeployDir), shell=True)
+
+uwDeployDir = os.path.join(siteDir, "Underworld")
 call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"api_doc"), uwDeployDir), shell=True)

@@ -95,7 +95,7 @@ RUN curl -L https://github.com/krallin/tini/releases/download/v0.6.0/tini > tini
     chmod +x /usr/local/bin/tini
 
 # script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
-RUN printf "#\041/bin/sh \n rm -f /tmp/.X99-lock && xvfb-run -s '-screen 0 1600x1200x16' \$@" >> /usr/local/bin/xvfbrun.sh && \
+RUN printf "#\041/bin/sh \n rm -f /tmp/.X99-lock && xvfb-run -a -s '-screen 0 1600x1200x16' \$@" >> /usr/local/bin/xvfbrun.sh && \
     chmod +x /usr/local/bin/xvfbrun.sh
 
 # Add a notebook profile.
