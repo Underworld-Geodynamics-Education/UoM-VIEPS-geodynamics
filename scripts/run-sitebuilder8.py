@@ -21,17 +21,7 @@ notebookPath = os.path.join(sitePath,"Notebooks")
 userList = [ str(i) for i in range(1,9) ]
 
 for user in userList:
+    sourcePath = os.path.join(sitePath,"www")
     siteDir = os.path.join(sitePath,"build","www"+user)
-    uwDeployDir = os.path.join(siteDir, "Introduction")
-
-
-    print "Building {:s}".format(siteDir)
-    call("cd {:s} && mkdocs build --site-dir {:s}".format(sitePath, siteDir), shell=True)
-
-#    call ("mkdir -p {:s}".format(uwDeployDir))
-    call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"examples"),     uwDeployDir), shell=True)
-    call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"user_guide"), uwDeployDir), shell=True)
-    call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"publications"), uwDeployDir), shell=True)
-
-    uwDeployDir = os.path.join(siteDir, "Underworld")
-    call("cp -r {:s} {:s}".format(os.path.join(uwDocDir,"api_doc"), uwDeployDir), shell=True)
+    print("rsync -av {}/ {}".format(sourcePath,siteDir))
+    call("rsync -av {}/ {}".format(sourcePath,siteDir), shell=True)

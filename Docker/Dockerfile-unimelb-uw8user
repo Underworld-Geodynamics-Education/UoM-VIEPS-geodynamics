@@ -1,4 +1,4 @@
-FROM lmoresi/docker-vieps-geo:2017
+FROM lmoresi/docker-vieps-geo:2018.1
 
 ## =============================================================
 ## base - image ... whatever functionality you want to provide !
@@ -29,4 +29,4 @@ RUN mkdir build && \
 
 EXPOSE 8080 8081 8082 8082 8084 8085 8086 8087 8088
 
-CMD ["xvfbrun.sh ", " scripts/run-jupyter8.py "]
+CMD scripts/run-jupyter8.py

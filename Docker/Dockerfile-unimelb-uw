@@ -1,4 +1,4 @@
-FROM lmoresi/unimelb-debian-uw:2017.03.29
+FROM lmoresi/unimelb-debian-uw:2018.1
 
 ## =============================================================
 ## base - image ... whatever functionality you want to provide !
@@ -23,48 +23,76 @@ FROM lmoresi/unimelb-debian-uw:2017.03.29
 ## Link your content to the "docs" directory at the root level of this module
 ## If you don't have any content then use the example content !!
 
-
 RUN pip install \
+    six --upgrade \
     https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master \
     jupyter_nbextensions_configurator
 
 RUN jupyter contrib nbextension install --system && \
     jupyter nbextensions_configurator enable --system
 
-RUN pip install mkdocs mkdocs-bootswatch
+RUN pip install mkdocs mkdocs-bootswatch pymdown-extensions
 
-RUN mkdir /geodynamics
+## Cartopy and all that stuff ... useful to have this still
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        python-gdal \
+        python-pil  \
+        python-lxml \
+        libgeos-dev \
+        gfortran \
+        cython
+
+# (proj4 is buggered up everywhere in apt-get ... so build a known-to-work version from source)
+
+RUN cd /usr/local && \
+    curl http://download.osgeo.org/proj/proj-4.9.3.tar.gz > proj-4.9.3.tar.gz  && \
+    tar -xzf proj-4.9.3.tar.gz && \
+    cd proj-4.9.3 && \
+    ./configure && \
+    make all && \
+    make install
+
+# The previous installation can only be found by cartopy if ...
+ENV LD_LIBRARY_PATH=/usr/local/lib
+
+RUN pip install --upgrade pyproj && \
+    pip install --upgrade netcdf4
+
+RUN pip install --no-binary :all: shapely
+RUN pip install --no-binary :all: --upgrade cartopy
+RUN pip install stripy litho1pt0 obspy
+
+RUN mkdir /geodynamics && chown jovyan:jovyan /geodynamics
 WORKDIR   /geodynamics
+USER jovyan
 
-## These are the build templates etc
-
-ADD mkdocs.yml mkdocs.yml
-ADD jupyter-server-theme jupyter-server-theme
-ADD scripts scripts
-ADD docs docs
-
-# RUN rsync -av /underworld/underworld2/docs/examples     /geodynamics/docs/Underworld/     && \
-#     rsync -av /underworld/underworld2/docs/user_guide   /geodynamics/docs/Underworld/   && \
-#     rsync -av /underworld/underworld2/docs/publications /geodynamics/docs/Underworld/
-
-
-# script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
-RUN printf "#\041/bin/sh \n rm -f /tmp/.X99-lock && xvfb-run -a -s '-screen 0 1600x1200x16' \$@" >> /usr/local/bin/xvfbrun.sh && \
-    chmod +x /usr/local/bin/xvfbrun.sh
-
+ADD --chown=jovyan:jovyan  mkdocs.yml mkdocs.yml
+ADD --chown=jovyan:jovyan  jupyter-server-theme jupyter-server-theme
+ADD --chown=jovyan:jovyan  scripts scripts
+ADD --chown=jovyan:jovyan  docs docs
+ADD --chown=jovyan:jovyan  Data/Reference Data/Reference
+ADD --chown=jovyan:jovyan  Data/Resources Data/Resources
 
 RUN ./scripts/run-sitebuilder.py
 
 RUN mkdir /geodynamics/www/external
 VOLUME    /geodynamics/www/external
 
+RUN  rsync -av $UW2_DIR/docs/examples     /geodynamics/www/Introduction/Notebooks/   && \
+     rsync -av $UW2_DIR/docs/user_guide   /geodynamics/www/Introduction/Notebooks/   && \
+     rsync -av $UW2_DIR/docs/publications /geodynamics/www/Introduction/Notebooks/
+
+RUN  ln -s /geodynamics/Data /geodynamics/www/Data
 
 ENV SHELL=/bin/bash
 
 # Launch the notebook server from the Notebook directory
 # but perhaps there is something else that would do this.
 
-
 EXPOSE 8080
 
-CMD ["xvfbrun.sh ", " scripts/run-jupyter.py "]
+# note we use xvfb which to mimic the X display for lavavu (hope this won't clash with uw/gLucifer)
+ENTRYPOINT ["/usr/local/bin/tini", "--", "xvfbrun.sh"]
+
+CMD scripts/run-jupyter.py

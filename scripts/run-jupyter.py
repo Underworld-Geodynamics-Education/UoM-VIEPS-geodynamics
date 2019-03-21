@@ -10,9 +10,9 @@ import time
 # Make sure jupyter defaults are correct (globally)
 
 call("jupyter nbextension enable hide_input/main", shell=True)
-call("jupyter nbextension enable rubberband/main", shell=True)
-call("jupyter nbextension enable exercise/main", shell=True)
-
+# call("jupyter nbextension enable rubberband/main", shell=True)
+# call("jupyter nbextension enable exercise/main", shell=True)
+#
 # This could be automated, but I am not sure how well the number of
 # servers will scale ... so leave at 8 ... and hand build
 
@@ -22,7 +22,7 @@ call("jupyter nbextension enable exercise/main", shell=True)
 dir      = "www"
 password = "vieps-geo-0"
 port     = 8080
-call( "cd {:s} &&  jupyter notebook --port={:d} --ip=0.0.0.0 --no-browser\
+call( "cd {:s} && nohup jupyter notebook --port={:d} --ip='*' --no-browser \
        --NotebookApp.token={:s} --NotebookApp.default_url=/files/index.html &".format(dir, port, password), shell=True )
 
 # Don't exit

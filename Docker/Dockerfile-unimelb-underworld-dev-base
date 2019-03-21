@@ -7,6 +7,8 @@ MAINTAINER Louis Moresi
 ## the update is fine but very slow ... keep it separated so it doesn't
 ## get run again and break the cache. The later parts of this build
 ## may be sensitive to later versions being picked up in the install phase.
+## We force a few packages to upgrade etc if there are concerned about the
+## apt-get versions.
 
 RUN apt-get update -y ;
 
@@ -38,65 +40,72 @@ RUN apt-get update -qq && \
     less \
     xauth \
     python-tk \
-    swig
+    swig \
+    gdb-minimal \
+    python2.7-dbg
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        libopenblas-dev \
-        liblapack-dev \
-        libscalapack-mpi-dev \
-        libhdf5-serial-dev \
-        libnetcdf-dev \
-        gfortran \
-        cython \
-        python-numpy \
-        python-scipy \
-        python-matplotlib \
-        pkg-config
+#RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+#        libopenblas-dev \
+#        liblapack-dev \
+#        libscalapack-mpi-dev \
+#        libnetcdf-dev \
+#        gfortran \
+#        cython \
+#        python-numpy \
+#        python-scipy \
+#        python-matplotlib \
+#        pkg-config \
+#        python-pandas \
+#        python-sympy \
+#        python-nose \
+#        pkg-config
+
 
 # Important to avoid problems later:
 RUN pip install --upgrade pip
 
-RUN pip install \
-    appdirs \
-    packaging \
-    numpy \
-    plotly \
-    mpi4py \
-    matplotlib \
-    runipy \
-    pillow
-
-RUN pip install six --upgrade --force-reinstall
-
-RUN pip install \
-    pyvirtualdisplay \
-    ipyparallel \
-    pint \
-    sphinx \
-    sphinx_rtd_theme \
-    sphinxcontrib-napoleon \
-    mock
-
-RUN pip install \
-    scipy --upgrade && \
-    pip install 'ipython==4.2.0' --force-reinstall
-
-RUN pip install jupyter
-
+# Install setuptools and wheel first, needed by plotly
+RUN pip install --no-cache-dir setuptools wheel && \
+    pip install --no-cache-dir packaging \
+        appdirs \
+        numpy \
+        jupyter \
+        plotly \
+        mpi4py \
+        matplotlib \
+        runipy \
+        pillow \
+        pyvirtualdisplay \
+        ipython==4.2.0 \
+        ipyparallel \
+        pint \
+        sphinx \
+        sphinx_rtd_theme \
+        sphinxcontrib-napoleon \
+        mock \
+        scipy --upgrade && \
+        CC=mpicc HDF5_MPI="ON" HDF5_DIR=/usr/lib/x86_64-linux-gnu/hdf5/openmpi/ pip install --no-cache-dir --no-binary=h5py h5py
 
 #   ^^^ Note we choose an older version of ipython because it's tooltips work better.
-#       Also, the system six is too old, so we upgrade for the pip version
+
+# install lavavu
+RUN pip install --no-cache-dir lavavu
 
 
 # Install Tini.. this is required because CMD (below) doesn't play nice with notebooks for some reason: https://github.com/ipython/ipython/issues/7062, https://github.com/jupyter/notebook/issues/334
-RUN curl -L https://github.com/krallin/tini/releases/download/v0.6.0/tini > tini && \
-    echo "d5ed732199c36a1189320e6c4859f0169e950692f451c03e7854243b95f4234b *tini" | sha256sum -c - && \
+RUN curl -L https://github.com/krallin/tini/releases/download/v0.10.0/tini > tini && \
+    echo "1361527f39190a7338a0b434bd8c88ff7233ce7b9a4876f3315c22fce7eca1b0 *tini" | sha256sum -c - && \
     mv tini /usr/local/bin/tini && \
     chmod +x /usr/local/bin/tini
 
-# script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
-RUN printf "#\041/bin/sh \n rm -f /tmp/.X99-lock && xvfb-run -a -s '-screen 0 1600x1200x16' \$@" >> /usr/local/bin/xvfbrun.sh && \
-    chmod +x /usr/local/bin/xvfbrun.sh
+  # script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
+  RUN printf "#\041/bin/sh \n rm -f /tmp/.X99-lock && xvfb-run -s '-screen 0 1600x1200x16' \$@" >> /usr/local/bin/xvfbrun.sh && \
+                      chmod +x /usr/local/bin/xvfbrun.sh
+
+
+# environment variable will internally run xvfb when glucifer is imported,
+#see /underworld/underworld2/glucifer/__init__.py
+ENV GLUCIFER_USE_XVFB 1
 
 # Add a notebook profile.
 RUN mkdir -p -m 700 /root/.jupyter/ && \
@@ -108,19 +117,28 @@ RUN ipcluster nbextension enable && \
     ipython profile create --parallel --profile=mpi && \
     echo "c.IPClusterEngines.engine_launcher_class = 'MPIEngineSetLauncher'" >> /root/.ipython/profile_mpi/ipcluster_config.py
 
+
+## Now install the most recent underworld release
+
 # set working directory to /underworld
+
 RUN mkdir -p /underworld
-WORKDIR /underworld
+WORKDIR /underworld/
 
 # setup environment
 ENV PYTHONPATH $PYTHONPATH:/underworld/underworld2
 
 # get underworld, compile, delete some unnecessary files, trust notebooks, copy to workspace
-RUN git clone --branch "development" --single-branch https://github.com/underworldcode/underworld2
+RUN git clone --branch "v2.5.1b" --single-branch https://github.com/underworldcode/underworld2
 
-RUN cd underworld2/libUnderworld && \
+ENV UW2_DIR /underworld/underworld2
+ENV NB_WORK /workspace/
+RUN mkdir -p $NB_WORK/www/Notebooks
+
+RUN cd $UW2_DIR/libUnderworld && \
     ./configure.py --with-debugging=0  && \
     ./compile.py                 && \
+    rm -fr h5py_ext              && \
     rm .sconsign.dblite          && \
     rm -fr .sconf_temp           && \
     cd build                     && \
@@ -133,30 +151,37 @@ RUN cd underworld2/libUnderworld && \
     rm -fr PICellerator          && \
     rm -fr Solvers
 
-RUN cd underworld2/libUnderworld && \
-    find /underworld/underworld2/docs -name \*.ipynb  -print0 | xargs -0 jupyter trust && \
-    mkdir /workspace                                                 && \
-    rsync -av /underworld/underworld2/docs/examples /workspace             && \
-    rsync -av /underworld/underworld2/docs/user_guide /workspace           && \
-    rsync -av /underworld/underworld2/docs/publications /workspace
+# add default user jovyan and change permissions on NB_WORK
+ENV NB_USER jovyan
+RUN useradd --create-home --home-dir /home/jovyan --shell /bin/bash --user-group jovyan
 
-RUN cd /underworld/underworld2/docs/development/api_doc_generator/                     && \
-    sphinx-build . ../../api_doc
+
+RUN cd $UW2_DIR/libUnderworld && \
+    find $UW2_DIR/docs -name \*.ipynb  -print0 | xargs -0 jupyter trust && \
+    cd $UW2_DIR/docs/development/api_doc_generator/                     && \
+    sphinx-build . ../../api_doc                                        && \
+    rsync -av $UW2_DIR/docs/. $NB_WORK                                  && \
+    chown -R $NB_USER:users $NB_WORK $UW2_DIR /home/$NB_USER
+
+# kiwisolver hack, and pipe down numpy warnings
+RUN sed -i "1i import kiwisolver;import warnings;warnings.filterwarnings(\"ignore\")" $UW2_DIR/underworld/__init__.py
+
+
+
+
 
 
 # Add a notebook profile.
 RUN mkdir -p -m 700 /root/.jupyter/ && \
     echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py
 
-# note we also use xvfb which is required for viz
+# note we also use xvfb which is required for viz with raw lavavu
 ENTRYPOINT ["/usr/local/bin/tini", "--", "xvfbrun.sh"]
+
 
 # Let the base image launch bash as root.
 # We can tie down the derived images to
-# have a low-status user (professor diablo)
-
-# USER profldiablo
-# ENV USER=profldiablo
+# have a low-status user
 
 # expose notebook port
 EXPOSE 8888

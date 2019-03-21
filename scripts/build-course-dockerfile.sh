@@ -9,5 +9,5 @@
 set -e
 cd $(dirname "$0")/..
 
-docker build -t lmoresi/docker-vieps-geo:2017 -f Docker/Dockerfile-unimelb-uw  .
-docker build -t lmoresi/docker-vieps-geo-8user:2017 -f Docker/Dockerfile-unimelb-uw8user  .
+docker build -t lmoresi/docker-vieps-geo:2018.1 -f Docker/Dockerfile-unimelb-uw  .
+docker build -t lmoresi/docker-vieps-geo-8user:2018.1 -f Docker/Dockerfile-unimelb-uw8user  .

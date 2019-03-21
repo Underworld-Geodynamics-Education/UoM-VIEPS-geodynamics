@@ -21,7 +21,7 @@ pages:
 - Notes:
     - "Introduction To Geodynamics": ComputationalGeodynamics/TheoreticalBackground/index.md
     - "Numerical Methods":           ComputationalGeodynamics/NumericalMethodsPrimer/index.md
-    - "Underworld User Guides":      Underworld/index.md
+    - "Underworld User Guides":      Introduction/index.md
     - "Selected Lecture Materials":  LectureNotes/index.md
 
 - _JustBuildThese:  # not added to the navigation menu
@@ -78,10 +78,14 @@ use_directory_urls: False
 
 # Mathematics
 
-extra_javascript:
-  - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-  - js/mathjax-local-config.js
-
 markdown_extensions:
-    - attr_list
-    - def_list
+   # other extensions ...
+  - pymdownx.arithmatex
+  - attr_list
+  - def_list
+    # other settings ...
+
+extra_javascript:
+  # other extra java script
+  - js/mathjax-local-config.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML

@@ -10,4 +10,4 @@
 set -e
 cd $(dirname "$0")/..
 
-docker build -f Docker/Dockerfile-unimelb-underworld-dev-base -t lmoresi/unimelb-debian-uw:2017.03.29 .
+docker build -f Docker/Dockerfile-unimelb-underworld-dev-base -t lmoresi/unimelb-debian-uw:2018.1 .

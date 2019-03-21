@@ -1,4 +1,4 @@
-# VIEPS Geodynamics 2017
+# VIEPS Geodynamics 2018
 
 
 This course provides an introduction to geodynamics with hands-on tutorials using the
@@ -7,9 +7,7 @@ This course provides an introduction to geodynamics with hands-on tutorials usin
 ## Instructors
 
   * Louis Moresi
-  * Adam Beall (guest lecture)
   * Rebecca Farrington (guest lecture)
-  * Ting Yang (guest lecture)
 
 ## Course Content
 
@@ -42,7 +40,7 @@ There is a set of background notes for mantle dynamics and computation bundled w
    1.	Morgan, W. J. Plate Motions and Deep Mantle Convection. Geological Society of America Memoirs 132, 7–22 (1972).
    1.	Vine, F. J. & Matthews, D. H. Magnetic anomalies over ocean ridges. Nature 199, 947–949 (1963).
    1.	Stock, J. Hotspots Come Unstuck. Science 301, 1059–1060 (2003).
-   1.	Moresi, L., Moresi, L. N., Gurnis, M. & Zhong, S. Plate tectonics and convection in the Earth's mantle: Toward a numerical simulation. Computing in Science & Engineering (2000).
+   1.	Moresi, L. N., Gurnis, M. & Zhong, S. Plate tectonics and convection in the Earth's mantle: Toward a numerical simulation. Computing in Science & Engineering (2000).
 
 ## Getting help
 
