@@ -8,12 +8,7 @@
 
 # Private Parts
 
-Private/*
-
-# Built - if made locally
-
-www/*
-build/*
+CourseContent/Private/*
 Data/Resources/*
 
 #  Git

@@ -5,4 +5,9 @@ _site
 # Site build
 www
 
-Data/Resources/*
+CourseContent/Data/Resources/*
+CourseContent/Reference/Cartopy/*.png
+CourseContent/Reference/Cartopy/*.jpg
+CourseContent/Reference/Stripy/SphericalTriangulations/*.png
+CourseContent/Reference/Stripy/CartesianTriangulations/*.png
+CourseContent/Reference/Stripy/Litho1pt0/*.png
